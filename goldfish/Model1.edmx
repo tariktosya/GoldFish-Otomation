@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="borcIslemleri">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="isim" Type="nvarchar(max)" />
+          <Property Name="borcTuru" Type="nvarchar" MaxLength="50" />
+          <Property Name="islem" Type="nvarchar(max)" />
+          <Property Name="tutar" Type="float" />
+          <Property Name="tarih" Type="datetime" />
+        </EntityType>
+        <EntityType Name="borclar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="isim" Type="nchar" MaxLength="100" />
+          <Property Name="tur" Type="nchar" MaxLength="10" />
+          <Property Name="alimTarih" Type="datetime" />
+          <Property Name="odemeTarih" Type="datetime" />
+          <Property Name="tutar" Type="float" />
+          <Property Name="aciklama" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="masraflar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="baslik" Type="nchar" MaxLength="100" />
+          <Property Name="tutar" Type="float" />
+          <Property Name="tarih" Type="datetime" />
+          <Property Name="aciklama" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="satislar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="firma" Type="nvarchar(max)" />
+          <Property Name="balikTuru" Type="nchar" MaxLength="100" />
+          <Property Name="balikCinsi" Type="nchar" MaxLength="100" />
+          <Property Name="adet" Type="float" />
+          <Property Name="birimFiyat" Type="float" />
+          <Property Name="tarih" Type="datetime" />
+          <Property Name="toplam" Type="float" />
+        </EntityType>
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tur" Type="nvarchar(max)" />
+          <Property Name="cins" Type="nvarchar(max)" />
+          <Property Name="adet" Type="float" />
+          <Property Name="alimTarihi" Type="datetime" />
+          <Property Name="alisFiyati" Type="float" />
+        </EntityType>
+        <EntityType Name="toplamBalik">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cins" Type="nchar" MaxLength="100" />
+          <Property Name="tur" Type="nchar" MaxLength="100" />
+          <Property Name="adet" Type="float" />
+        </EntityType>
+        <EntityType Name="zayiat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cins" Type="nvarchar(max)" />
+          <Property Name="tur" Type="nvarchar(max)" />
+          <Property Name="adet" Type="float" />
+          <Property Name="tarih" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="DatabaseModelStoreContainer">
+          <EntitySet Name="borcIslemleri" EntityType="Self.borcIslemleri" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="borclar" EntityType="Self.borclar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="masraflar" EntityType="Self.masraflar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="satislar" EntityType="Self.satislar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="toplamBalik" EntityType="Self.toplamBalik" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="zayiat" EntityType="Self.zayiat" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Table" EntityType="DatabaseModel.Table" />
+          <EntitySet Name="toplamBalik" EntityType="DatabaseModel.toplamBalik" />
+          <EntitySet Name="borclar" EntityType="DatabaseModel.borclar" />
+          <EntitySet Name="masraflar" EntityType="DatabaseModel.masraflar" />
+          <EntitySet Name="satislar" EntityType="DatabaseModel.satislar" />
+          <EntitySet Name="zayiat" EntityType="DatabaseModel.zayiat" />
+          <EntitySet Name="borcIslemleri" EntityType="DatabaseModel.borcIslemleri" />
+        </EntityContainer>
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tur" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="cins" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="adet" Type="Double" />
+          <Property Name="alimTarihi" Type="DateTime" Precision="3" />
+          <Property Name="alisFiyati" Type="Double" />
+        </EntityType>
+        <EntityType Name="toplamBalik">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cins" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="tur" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="adet" Type="Double" />
+        </EntityType>
+        <EntityType Name="borclar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="isim" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="tur" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="alimTarih" Type="DateTime" Precision="3" />
+          <Property Name="odemeTarih" Type="DateTime" Precision="3" />
+          <Property Name="tutar" Type="Double" />
+          <Property Name="aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="masraflar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="baslik" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="tutar" Type="Double" />
+          <Property Name="tarih" Type="DateTime" Precision="3" />
+          <Property Name="aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="satislar">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firma" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="balikTuru" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="balikCinsi" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="adet" Type="Double" />
+          <Property Name="birimFiyat" Type="Double" />
+          <Property Name="tarih" Type="DateTime" Precision="3" />
+          <Property Name="toplam" Type="Double" />
+        </EntityType>
+        <EntityType Name="zayiat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cins" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="tur" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="adet" Type="Double" />
+          <Property Name="tarih" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="borcIslemleri">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="isim" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="borcTuru" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="islem" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="tutar" Type="Double" />
+          <Property Name="tarih" Type="DateTime" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="DatabaseEntities">
+          <EntitySetMapping Name="Table">
+            <EntityTypeMapping TypeName="DatabaseModel.Table">
+              <MappingFragment StoreEntitySet="Table">
+                <ScalarProperty Name="alisFiyati" ColumnName="alisFiyati" />
+                <ScalarProperty Name="alimTarihi" ColumnName="alimTarihi" />
+                <ScalarProperty Name="adet" ColumnName="adet" />
+                <ScalarProperty Name="cins" ColumnName="cins" />
+                <ScalarProperty Name="tur" ColumnName="tur" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="toplamBalik">
+            <EntityTypeMapping TypeName="DatabaseModel.toplamBalik">
+              <MappingFragment StoreEntitySet="toplamBalik">
+                <ScalarProperty Name="adet" ColumnName="adet" />
+                <ScalarProperty Name="tur" ColumnName="tur" />
+                <ScalarProperty Name="cins" ColumnName="cins" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="borclar">
+            <EntityTypeMapping TypeName="DatabaseModel.borclar">
+              <MappingFragment StoreEntitySet="borclar">
+                <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+                <ScalarProperty Name="tutar" ColumnName="tutar" />
+                <ScalarProperty Name="odemeTarih" ColumnName="odemeTarih" />
+                <ScalarProperty Name="alimTarih" ColumnName="alimTarih" />
+                <ScalarProperty Name="tur" ColumnName="tur" />
+                <ScalarProperty Name="isim" ColumnName="isim" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="masraflar">
+            <EntityTypeMapping TypeName="DatabaseModel.masraflar">
+              <MappingFragment StoreEntitySet="masraflar">
+                <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+                <ScalarProperty Name="tutar" ColumnName="tutar" />
+                <ScalarProperty Name="baslik" ColumnName="baslik" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="satislar">
+            <EntityTypeMapping TypeName="DatabaseModel.satislar">
+              <MappingFragment StoreEntitySet="satislar">
+                <ScalarProperty Name="toplam" ColumnName="toplam" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+                <ScalarProperty Name="birimFiyat" ColumnName="birimFiyat" />
+                <ScalarProperty Name="adet" ColumnName="adet" />
+                <ScalarProperty Name="balikCinsi" ColumnName="balikCinsi" />
+                <ScalarProperty Name="balikTuru" ColumnName="balikTuru" />
+                <ScalarProperty Name="firma" ColumnName="firma" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="zayiat">
+            <EntityTypeMapping TypeName="DatabaseModel.zayiat">
+              <MappingFragment StoreEntitySet="zayiat">
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+                <ScalarProperty Name="adet" ColumnName="adet" />
+                <ScalarProperty Name="tur" ColumnName="tur" />
+                <ScalarProperty Name="cins" ColumnName="cins" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="borcIslemleri">
+            <EntityTypeMapping TypeName="DatabaseModel.borcIslemleri">
+              <MappingFragment StoreEntitySet="borcIslemleri">
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+                <ScalarProperty Name="tutar" ColumnName="tutar" />
+                <ScalarProperty Name="islem" ColumnName="islem" />
+                <ScalarProperty Name="borcTuru" ColumnName="borcTuru" />
+                <ScalarProperty Name="isim" ColumnName="isim" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

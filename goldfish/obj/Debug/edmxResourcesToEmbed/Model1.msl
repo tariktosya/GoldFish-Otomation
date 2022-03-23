@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="DatabaseEntities">
+    <EntitySetMapping Name="Table">
+      <EntityTypeMapping TypeName="DatabaseModel.Table">
+        <MappingFragment StoreEntitySet="Table">
+          <ScalarProperty Name="alisFiyati" ColumnName="alisFiyati" />
+          <ScalarProperty Name="alimTarihi" ColumnName="alimTarihi" />
+          <ScalarProperty Name="adet" ColumnName="adet" />
+          <ScalarProperty Name="cins" ColumnName="cins" />
+          <ScalarProperty Name="tur" ColumnName="tur" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="toplamBalik">
+      <EntityTypeMapping TypeName="DatabaseModel.toplamBalik">
+        <MappingFragment StoreEntitySet="toplamBalik">
+          <ScalarProperty Name="adet" ColumnName="adet" />
+          <ScalarProperty Name="tur" ColumnName="tur" />
+          <ScalarProperty Name="cins" ColumnName="cins" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="borclar">
+      <EntityTypeMapping TypeName="DatabaseModel.borclar">
+        <MappingFragment StoreEntitySet="borclar">
+          <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+          <ScalarProperty Name="tutar" ColumnName="tutar" />
+          <ScalarProperty Name="odemeTarih" ColumnName="odemeTarih" />
+          <ScalarProperty Name="alimTarih" ColumnName="alimTarih" />
+          <ScalarProperty Name="tur" ColumnName="tur" />
+          <ScalarProperty Name="isim" ColumnName="isim" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="masraflar">
+      <EntityTypeMapping TypeName="DatabaseModel.masraflar">
+        <MappingFragment StoreEntitySet="masraflar">
+          <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+          <ScalarProperty Name="tutar" ColumnName="tutar" />
+          <ScalarProperty Name="baslik" ColumnName="baslik" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="satislar">
+      <EntityTypeMapping TypeName="DatabaseModel.satislar">
+        <MappingFragment StoreEntitySet="satislar">
+          <ScalarProperty Name="toplam" ColumnName="toplam" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+          <ScalarProperty Name="birimFiyat" ColumnName="birimFiyat" />
+          <ScalarProperty Name="adet" ColumnName="adet" />
+          <ScalarProperty Name="balikCinsi" ColumnName="balikCinsi" />
+          <ScalarProperty Name="balikTuru" ColumnName="balikTuru" />
+          <ScalarProperty Name="firma" ColumnName="firma" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="zayiat">
+      <EntityTypeMapping TypeName="DatabaseModel.zayiat">
+        <MappingFragment StoreEntitySet="zayiat">
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+          <ScalarProperty Name="adet" ColumnName="adet" />
+          <ScalarProperty Name="tur" ColumnName="tur" />
+          <ScalarProperty Name="cins" ColumnName="cins" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="borcIslemleri">
+      <EntityTypeMapping TypeName="DatabaseModel.borcIslemleri">
+        <MappingFragment StoreEntitySet="borcIslemleri">
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+          <ScalarProperty Name="tutar" ColumnName="tutar" />
+          <ScalarProperty Name="islem" ColumnName="islem" />
+          <ScalarProperty Name="borcTuru" ColumnName="borcTuru" />
+          <ScalarProperty Name="isim" ColumnName="isim" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

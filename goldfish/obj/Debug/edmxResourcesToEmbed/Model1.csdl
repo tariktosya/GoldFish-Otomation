@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="DatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Table" EntityType="DatabaseModel.Table" />
+    <EntitySet Name="toplamBalik" EntityType="DatabaseModel.toplamBalik" />
+    <EntitySet Name="borclar" EntityType="DatabaseModel.borclar" />
+    <EntitySet Name="masraflar" EntityType="DatabaseModel.masraflar" />
+    <EntitySet Name="satislar" EntityType="DatabaseModel.satislar" />
+    <EntitySet Name="zayiat" EntityType="DatabaseModel.zayiat" />
+    <EntitySet Name="borcIslemleri" EntityType="DatabaseModel.borcIslemleri" />
+  </EntityContainer>
+  <EntityType Name="Table">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tur" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="cins" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="adet" Type="Double" />
+    <Property Name="alimTarihi" Type="DateTime" Precision="3" />
+    <Property Name="alisFiyati" Type="Double" />
+  </EntityType>
+  <EntityType Name="toplamBalik">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cins" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="tur" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="adet" Type="Double" />
+  </EntityType>
+  <EntityType Name="borclar">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="isim" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="tur" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="alimTarih" Type="DateTime" Precision="3" />
+    <Property Name="odemeTarih" Type="DateTime" Precision="3" />
+    <Property Name="tutar" Type="Double" />
+    <Property Name="aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="masraflar">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="baslik" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="tutar" Type="Double" />
+    <Property Name="tarih" Type="DateTime" Precision="3" />
+    <Property Name="aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="satislar">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="firma" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="balikTuru" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="balikCinsi" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="adet" Type="Double" />
+    <Property Name="birimFiyat" Type="Double" />
+    <Property Name="tarih" Type="DateTime" Precision="3" />
+    <Property Name="toplam" Type="Double" />
+  </EntityType>
+  <EntityType Name="zayiat">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cins" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tur" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="adet" Type="Double" />
+    <Property Name="tarih" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="borcIslemleri">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="isim" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="borcTuru" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="islem" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tutar" Type="Double" />
+    <Property Name="tarih" Type="DateTime" Precision="3" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "goldfish", "goldfish\goldfish.csproj", "{ED86DAF2-A2AA-4076-81E0-AF661AD503EE}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "YILDIRIM BALIK", "YILDIRIM BALIK\YILDIRIM BALIK.vdproj", "{EC443045-7B37-454E-AAFA-8E02A5C20B84}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED86DAF2-A2AA-4076-81E0-AF661AD503EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED86DAF2-A2AA-4076-81E0-AF661AD503EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED86DAF2-A2AA-4076-81E0-AF661AD503EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED86DAF2-A2AA-4076-81E0-AF661AD503EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC443045-7B37-454E-AAFA-8E02A5C20B84}.Debug|Any CPU.ActiveCfg = Debug
+		{EC443045-7B37-454E-AAFA-8E02A5C20B84}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5E4EE0E5-D081-4F06-ABAC-E3EFE50F64B4}
+	EndGlobalSection
+EndGlobal

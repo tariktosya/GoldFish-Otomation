@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="borcIslemleri">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="isim" Type="nvarchar(max)" />
+    <Property Name="borcTuru" Type="nvarchar" MaxLength="50" />
+    <Property Name="islem" Type="nvarchar(max)" />
+    <Property Name="tutar" Type="float" />
+    <Property Name="tarih" Type="datetime" />
+  </EntityType>
+  <EntityType Name="borclar">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="isim" Type="nchar" MaxLength="100" />
+    <Property Name="tur" Type="nchar" MaxLength="10" />
+    <Property Name="alimTarih" Type="datetime" />
+    <Property Name="odemeTarih" Type="datetime" />
+    <Property Name="tutar" Type="float" />
+    <Property Name="aciklama" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="masraflar">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="baslik" Type="nchar" MaxLength="100" />
+    <Property Name="tutar" Type="float" />
+    <Property Name="tarih" Type="datetime" />
+    <Property Name="aciklama" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="satislar">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="firma" Type="nvarchar(max)" />
+    <Property Name="balikTuru" Type="nchar" MaxLength="100" />
+    <Property Name="balikCinsi" Type="nchar" MaxLength="100" />
+    <Property Name="adet" Type="float" />
+    <Property Name="birimFiyat" Type="float" />
+    <Property Name="tarih" Type="datetime" />
+    <Property Name="toplam" Type="float" />
+  </EntityType>
+  <EntityType Name="Table">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tur" Type="nvarchar(max)" />
+    <Property Name="cins" Type="nvarchar(max)" />
+    <Property Name="adet" Type="float" />
+    <Property Name="alimTarihi" Type="datetime" />
+    <Property Name="alisFiyati" Type="float" />
+  </EntityType>
+  <EntityType Name="toplamBalik">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cins" Type="nchar" MaxLength="100" />
+    <Property Name="tur" Type="nchar" MaxLength="100" />
+    <Property Name="adet" Type="float" />
+  </EntityType>
+  <EntityType Name="zayiat">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cins" Type="nvarchar(max)" />
+    <Property Name="tur" Type="nvarchar(max)" />
+    <Property Name="adet" Type="float" />
+    <Property Name="tarih" Type="datetime" />
+  </EntityType>
+  <EntityContainer Name="DatabaseModelStoreContainer">
+    <EntitySet Name="borcIslemleri" EntityType="Self.borcIslemleri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="borclar" EntityType="Self.borclar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="masraflar" EntityType="Self.masraflar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="satislar" EntityType="Self.satislar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="toplamBalik" EntityType="Self.toplamBalik" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="zayiat" EntityType="Self.zayiat" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
